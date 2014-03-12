@@ -1,0 +1,21 @@
+{
+  "name": "HiFidelity",
+  "version": "0.0.0",
+  "description": "A simple movie journal",
+  "main": "server.js",
+  "dependencies": {
+    "bower": "latest",
+    "express": "latest",
+    "mongoose": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "movies",
+    "mean",
+    "journal"
+  ],
+  "author": "Zac Ioannidis",
+  "license": "GPL"
+}
