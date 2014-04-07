@@ -16,16 +16,17 @@ module.exports = function(app) {
         Hifidelity.create({
             title   :   req.body.title,
             year    :   req.body.year,
-            seen    :   false
+            seen    :   false,
+            critique : req.body.critique
         }, function(err, movies) {
             if (err)
                 res.send(err);
 
             // return all movies after entry is added
-            Hifidelity.find(function(err, todos) {
+            Hifidelity.find(function(err, movies) {
                 if (err)
                     res.send(err)
-                res.json(todos);
+                res.json(movies);
             });
         });
     });

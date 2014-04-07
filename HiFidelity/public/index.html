@@ -15,12 +15,54 @@
     <script src="/js/services/hifidelityService.js"></script>
 </head>
 <body ng-controller="mainController">
-    <div class="container">
-        <h1>My Movies</h1>
-        <ul ng-repeat="movie in movies">
+
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <h1>Movie Journal</h1>
+          <ul ng-repeat="movie in movies">
             <li>{{movie.title}}, {{movie.year}}</li>
-        </ul>
+          </ul>
+        </div>
+        <div class="col-sm-8 text-center">
+          <h1>Add Movie</h1>
+          <form>
+            <div class="row">
+
+              <div class="col-sm-8">
+                <h2>Title</h2>
+                  <div class="form-group">
+                    <input type="text" class="form-control input-md text-center" placeholder="Clockwork Orange" ng-model="formData.title">
+                  </div>
+              </div>
+              <div class="col-sm-4">
+                <h2>Year</h2>
+                <div class="form-group">
+                  <input type="text" class="form-control input-md text-center" placeholder="1971" ng-model="formData.year">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="col-sm-12">
+                <h2>Critique</h2>
+                <div class="form-group">
+                  <textarea class="form-control input-md text-center" placeholder="Opinions, opinions..." ng-model="formData.critique" rows="4"></textarea>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-sm-12 text-center">
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="addMovie()">Add</button>
+              </div>
+            </div>
+          </form>
+        </div>
     </div>
+  </div>
     
 </body>
 </html>
