@@ -3,6 +3,7 @@
 angular.module('hifidelityController', [])
     .controller('mainController', function($scope, $http, Movies) {
         $scope.formData = {};
+        $scope.ratings = [1,2,3,4,5,6,7,8,9,10];
         Movies.get()
             .success(function(data) {
                 $scope.movies = data;
