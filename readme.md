@@ -1,6 +1,8 @@
 HiFidelity
 ==========
 
+Simple movie journal.
+
 Installation
 ---
 
