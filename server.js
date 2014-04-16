@@ -8,10 +8,6 @@ var database = require('./config/db'); // load the database config
 var port = process.env.PORT || 8080; // set the port
 
 // configuration ===============================================================
-// mongoose.connect(database.url); // connect to mongoDB database on modulus.io
-// var dburl = process.env.MONGOLAB_URI ||
-//             process.env.MONGOHQ_URL ||
-//             'mongodb://localhost/hifidelity';
 
 // connect to mongoDB database
 mongoose.connect(database.url, function(err, res) {
