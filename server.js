@@ -1,4 +1,4 @@
-var stdo = require('fs').createWriteStream('log.txt');
+var stdo = require('fs').createWriteStream('/var/log/node-server/log.txt');
 process.stdout.write = (function(write) {
         return function(string, encoding, fd) {
                 stdo.write(string);
