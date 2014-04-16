@@ -12,6 +12,7 @@ var port = process.env.PORT || 8080; // set the port
 var dburl = process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
             'mongodb://localhost/hifidelity';
+
 mongoose.connect(dburl, function(err, res) {
     if (err) { 
     console.log ('ERROR connecting to: ' + dburl + '. ' + err);
