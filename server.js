@@ -11,8 +11,14 @@ var port = process.env.PORT || 8080; // set the port
 // mongoose.connect(database.url); // connect to mongoDB database on modulus.io
 var dburl = process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
-            'mongodb://127.0.0.1:27017/hifidelity';
-mongoose.connect(dburl); // connect to mongoDB database on modulus.io
+            'mongodb://localhost/hifidelity';
+mongoose.connect(dburl, function(err, res) {
+    if (err) { 
+    console.log ('ERROR connecting to: ' + dburl + '. ' + err);
+    } else {
+    console.log ('Succeeded connected to: ' + dburl);
+    }
+});
 
 app.configure(function() {
     app.use(express.static(__dirname + '/public')); // set the static files location /public/img will be /img for users
