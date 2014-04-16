@@ -8,8 +8,11 @@
     "express": "latest",
     "mongoose": "latest"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "engines": {
+      "node": "0.10.26"
+  },
+  "scripts" : {
+    "postinstall": "bower install"
   },
   "keywords": [
     "movies",

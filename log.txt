@@ -1,6 +1,0 @@
-App listening on port 5000
-undefined
-undefined
-Succeeded connected to: mongodb://localhost/hifidelity
-[90mGET /api/movies [36m304 [90m17ms[0m
-[90mGET /favicon.ico [36m304 [90m2ms[0m

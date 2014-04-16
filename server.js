@@ -1,10 +1,3 @@
-var stdo = require('fs').createWriteStream('/var/log/node-server/log.txt');
-process.stdout.write = (function(write) {
-        return function(string, encoding, fd) {
-                stdo.write(string);
-        }
-})(process.stdout.write)
-
 // set up ======================================================================
 var express = require('express');
 var app = express(); // create our app w/ express
@@ -23,7 +16,7 @@ mongoose.connect(dburl, function(err, res) {
     if (err) { 
     console.log ('ERROR connecting to: ' + dburl + '. ' + err);
     } else {
-    console.log ('Succeeded connected to: ' + dburl);
+    console.log ('Succeeded connecting to: ' + dburl);
     }
 });
 
