@@ -4,20 +4,21 @@ var app = express(); // create our app w/ express
 var mongoose = require('mongoose'); // mongoose for mongodb
 
 // config files =======================================================
-// var database = require('./config/db'); // load the database config
+var database = require('./config/db'); // load the database config
 var port = process.env.PORT || 8080; // set the port
 
 // configuration ===============================================================
 // mongoose.connect(database.url); // connect to mongoDB database on modulus.io
-var dburl = process.env.MONGOLAB_URI ||
-            process.env.MONGOHQ_URL ||
-            'mongodb://localhost/hifidelity';
+// var dburl = process.env.MONGOLAB_URI ||
+//             process.env.MONGOHQ_URL ||
+//             'mongodb://localhost/hifidelity';
 
-mongoose.connect(dburl, function(err, res) {
+// connect to mongoDB database
+mongoose.connect(database.url, function(err, res) {
     if (err) { 
-    console.log ('ERROR connecting to: ' + dburl + '. ' + err);
+    console.log ('ERROR connecting to: ' + database.url + '. ' + err);
     } else {
-    console.log ('Succeeded connecting to: ' + dburl);
+    console.log ('Succeeded connecting to: ' + database.url);
     }
 });
 
