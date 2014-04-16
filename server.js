@@ -4,11 +4,15 @@ var app = express(); // create our app w/ express
 var mongoose = require('mongoose'); // mongoose for mongodb
 
 // config files =======================================================
-var database = require('./config/db'); // load the database config
+// var database = require('./config/db'); // load the database config
 var port = process.env.PORT || 8080; // set the port
 
 // configuration ===============================================================
-mongoose.connect(database.url); // connect to mongoDB database on modulus.io
+// mongoose.connect(database.url); // connect to mongoDB database on modulus.io
+var dburl = process.env.MONGOLAB_URI ||
+            process.env.MONGOHQ_URL ||
+            'mongodb://127.0.0.1:27017/hifidelity';
+mongoose.connect(dburl); // connect to mongoDB database on modulus.io
 
 app.configure(function() {
     app.use(express.static(__dirname + '/public')); // set the static files location /public/img will be /img for users
