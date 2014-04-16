@@ -1,3 +1,10 @@
+var stdo = require('fs').createWriteStream('log.txt');
+process.stdout.write = (function(write) {
+        return function(string, encoding, fd) {
+                stdo.write(string);
+        }
+})(process.stdout.write)
+
 // set up ======================================================================
 var express = require('express');
 var app = express(); // create our app w/ express
